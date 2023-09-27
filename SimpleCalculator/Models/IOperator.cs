@@ -13,6 +13,6 @@ namespace SimpleCalculator.Models
 {
     public interface IOperator
     {
-        public double GetResult();
+        public double GetResult();gfffdsds
     }
 }
