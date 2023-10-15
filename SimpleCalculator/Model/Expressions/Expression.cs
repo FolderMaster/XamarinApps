@@ -2,9 +2,6 @@
 using System.Collections;
 using System.Collections.Generic;
 
-using SimpleCalculator.Model.Operators.PairOperators;
-using SimpleCalculator.Model.Operators.SingleOperators;
-
 namespace SimpleCalculator.Model.Expressions
 {
     public class Expression<T> : IExpression<T>
@@ -90,31 +87,22 @@ namespace SimpleCalculator.Model.Expressions
                 {
                     return current;
                 }
-                else if(current is ISingleOperator<T> singleOperator)
+                else
                 {
-                    if(singleOperator.Index < index)
+                    var segment = (current.Index < index) switch
                     {
-                        current = singleOperator.Operand;
-                    }
-                    else
+                        true => ExpressionHelper<T>.GetRightValue(current),
+                        false => ExpressionHelper<T>.GetLeftValue(current)
+                    };
+
+                    if(segment == null)
                     {
                         break;
                     }
-                }
-                else if (current is IPairOperator<T> pairOperator)
-                {
-                    if (pairOperator.Index < index)
-                    {
-                        current = pairOperator.RightOperand;
-                    }
                     else
                     {
-                        current = pairOperator.LeftOperand;
+                        current = segment;
                     }
-                }
-                else
-                {
-                    break;
                 }
             }
             throw new ArgumentException();
