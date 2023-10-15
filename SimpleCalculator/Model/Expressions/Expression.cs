@@ -29,12 +29,9 @@ namespace SimpleCalculator.Model.Expressions
             }
         }
 
-        public IValue<T> this[int index]
-        {
-            get => FindValue(index);
-        }
+        public IValue<T> this[int index] => FindValue(index);
 
-        private IValue<T> Merge(IValue<T> left, IValue<T> right)
+        protected IValue<T> Merge(IValue<T> left, IValue<T> right)
         {
             if(left == null)
             {
@@ -58,7 +55,7 @@ namespace SimpleCalculator.Model.Expressions
             }
         }
 
-        private (IValue<T>, IValue<T>) Split(IValue<T> value, int index)
+        protected (IValue<T>, IValue<T>) Split(IValue<T> value, int index)
         {
             if(value == null)
             {
@@ -78,7 +75,17 @@ namespace SimpleCalculator.Model.Expressions
             }
         }
 
-        private IValue<T> FindValue(int index)
+        protected void ChangeIndexes(IValue<T> value, int change)
+        {
+            if (value != null)
+            {
+                value.Index += change;
+                ChangeIndexes(ExpressionHelper<T>.GetLeftValue(value), change);
+                ChangeIndexes(ExpressionHelper<T>.GetRightValue(value), change);
+            }
+        }
+
+        public IValue<T> FindValue(int index)
         {
             var current = _root;
             while (current != null)
@@ -89,33 +96,19 @@ namespace SimpleCalculator.Model.Expressions
                 }
                 else
                 {
-                    var segment = (current.Index < index) switch
+                    current = (current.Index < index) switch
                     {
                         true => ExpressionHelper<T>.GetRightValue(current),
                         false => ExpressionHelper<T>.GetLeftValue(current)
                     };
 
-                    if(segment == null)
+                    if(current == null)
                     {
                         break;
-                    }
-                    else
-                    {
-                        current = segment;
                     }
                 }
             }
             throw new ArgumentException();
-        }
-
-        private void ChangeIndexes(IValue<T> value, int change)
-        {
-            if(value != null)
-            {
-                value.Index += change;
-                ChangeIndexes(ExpressionHelper<T>.GetLeftValue(value), change);
-                ChangeIndexes(ExpressionHelper<T>.GetRightValue(value), change);
-            }
         }
 
         public void Add(IValue<T> value) => Add(value, Count);

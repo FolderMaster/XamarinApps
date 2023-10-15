@@ -9,8 +9,6 @@ namespace SimpleCalculator.Model.Expressions
 
         protected int _position = -1;
 
-        protected bool _isIndexValid => _position >= 0 && _position < _values.Count;
-
         public IValue<T> Current => _values[_position];
 
         object IEnumerator.Current => Current;
@@ -42,7 +40,7 @@ namespace SimpleCalculator.Model.Expressions
             {
                 ++_position;
             }
-            return _isIndexValid;
+            return _position >= 0 && _position < _values.Count;
         }
 
         public void Reset() => _position = -1;
