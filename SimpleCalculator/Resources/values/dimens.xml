@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<dimen name="ExpressionSize">32dp</dimen>
+	<dimen name="ResultSize">16dp</dimen>
+	<dimen name="LayoutMargin">10dp</dimen>
+	<dimen name="ButtonSize">65dp</dimen>
+</resources>
