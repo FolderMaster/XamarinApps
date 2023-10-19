@@ -62,6 +62,7 @@
   <ItemGroup>
     <Compile Include="Model\Expressions\ExpressionEnumerator.cs" />
     <Compile Include="Model\Expressions\ExpressionHelper.cs" />
+    <Compile Include="Model\Operators\PairOperators\DivisionOperators\BasicDivisionOperator.cs" />
     <Compile Include="NumberCalculatorManager.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Model\Expressions\Expression.cs" />
@@ -70,10 +71,10 @@
     <Compile Include="Model\Operators\IOperator.cs" />
     <Compile Include="Model\Operators\PairOperators\Addition.cs" />
     <Compile Include="Model\Operators\PairOperators\BasicPairOperator.cs" />
-    <Compile Include="Model\Operators\PairOperators\Division.cs" />
+    <Compile Include="Model\Operators\PairOperators\DivisionOperators\Division.cs" />
     <Compile Include="Model\Operators\PairOperators\IPairOperator.cs" />
-    <Compile Include="Model\Operators\PairOperators\Modulo.cs" />
-    <Compile Include="Model\Operators\PairOperators\ModuloDivision.cs" />
+    <Compile Include="Model\Operators\PairOperators\DivisionOperators\Modulo.cs" />
+    <Compile Include="Model\Operators\PairOperators\DivisionOperators\ModuloDivision.cs" />
     <Compile Include="Model\Operators\PairOperators\Multiplication.cs" />
     <Compile Include="Model\Operators\PairOperators\Subtraction.cs" />
     <Compile Include="Model\Operators\SingleOperators\BasicSingleOperator.cs" />

@@ -28,6 +28,16 @@ namespace SimpleCalculator
             }
         }
 
+        protected void RemoveLastValue()
+        {
+            var count = _expression.Count;
+            _expression.Remove(count - 1);
+            if (count == 1)
+            {
+                _expression.Add(new DoubleVariable());
+            }
+        }
+
         public void AddNumber(int number)
         {
             var count = _expression.Count;
@@ -129,13 +139,7 @@ namespace SimpleCalculator
                 }
                 else
                 {
-                    _expression.Remove(count - 1);
-                }
-
-                count = _expression.Count;
-                if (count == 0)
-                {
-                    _expression.Add(new DoubleVariable());
+                    RemoveLastValue();
                 }
             }
             _hasUnmarkedPoint = false;
@@ -177,13 +181,7 @@ namespace SimpleCalculator
                 }
                 else
                 {
-                    _expression.Remove(count - 1);
-                }
-
-                count = _expression.Count;
-                if (count == 0)
-                {
-                    _expression.Add(new DoubleVariable());
+                    RemoveLastValue();
                 }
             }
         }
@@ -217,7 +215,7 @@ namespace SimpleCalculator
             {
                 result = _equalSymbol + _expression.GetValue().ToString();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 result = ex.Message;
             }

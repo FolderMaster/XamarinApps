@@ -6,7 +6,7 @@
 
         public override string Symbol => "%";
 
-        public override double GetValue() =>
+        protected override double CalculateValue() =>
             LeftOperand.GetValue() / 100d * RightOperand.GetValue();
     }
 }

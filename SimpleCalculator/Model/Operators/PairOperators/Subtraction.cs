@@ -6,6 +6,7 @@
 
         public override string Symbol => "-";
 
-        public override double GetValue() => LeftOperand.GetValue() - RightOperand.GetValue();
+        protected override double CalculateValue() =>
+            LeftOperand.GetValue() - RightOperand.GetValue();
     }
 }

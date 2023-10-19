@@ -1,4 +1,6 @@
-﻿namespace SimpleCalculator.Model.Operators.SingleOperators
+﻿using System;
+
+namespace SimpleCalculator.Model.Operators.SingleOperators
 {
     public abstract class BasicSingleOperator<T> : ISingleOperator<T>
     {
@@ -18,6 +20,15 @@
             set => _operand = value;
         }
 
-        public abstract T GetValue();
+        protected abstract T CalculateValue();
+
+        public T GetValue()
+        {
+            if(Operand == null)
+            {
+                throw new ArgumentException($"Отсутствует операнд у операции '{Symbol}'!");
+            }
+            return CalculateValue();
+        }
     }
 }

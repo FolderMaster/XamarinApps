@@ -10,6 +10,7 @@ using System;
 
 using SimpleCalculator.Model.Expressions;
 using SimpleCalculator.Model.Operators.PairOperators;
+using SimpleCalculator.Model.Operators.PairOperators.DivisionOperators;
 using SimpleCalculator.Model.Operators.SingleOperators;
 using SimpleCalculator.Model.Variables;
 

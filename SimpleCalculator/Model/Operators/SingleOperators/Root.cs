@@ -8,6 +8,6 @@ namespace SimpleCalculator.Model.Operators.SingleOperators
 
         public override string Symbol => "√";
 
-        public override double GetValue() => Math.Sqrt(Operand.GetValue());
+        protected override double CalculateValue() => Math.Sqrt(Operand.GetValue());
     }
 }

@@ -1,4 +1,6 @@
-﻿namespace SimpleCalculator.Model.Operators.PairOperators
+﻿using System;
+
+namespace SimpleCalculator.Model.Operators.PairOperators
 {
     public abstract class BasicPairOperator<T> : IPairOperator<T>
     {
@@ -26,6 +28,19 @@
             set => _rightOperand = value;
         }
 
-        public abstract T GetValue();
+        protected abstract T CalculateValue();
+
+        public T GetValue()
+        {
+            if (LeftOperand == null)
+            {
+                throw new ArgumentException($"Отсутствует левый операнд у операции '{Symbol}'!");
+            }
+            if (RightOperand == null)
+            {
+                throw new ArgumentException($"Отсутствует правый операнд у операции '{Symbol}'!");
+            }
+            return CalculateValue();
+        }
     }
 }
