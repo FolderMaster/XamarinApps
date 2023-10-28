@@ -1,6 +1,6 @@
 ﻿namespace SimpleCalculator.Model.Operators.PairOperators.DivisionOperators
 {
-    internal class Modulo : BasicDivisionOperator
+    public class Modulo : BasicDivisionOperator
     {
         public override int Priority => 1;
 

@@ -5,6 +5,8 @@ VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleCalculator", "SimpleCalculator\SimpleCalculator.csproj", "{79CE71E9-1CEB-474E-BD87-C3FC6B25877D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomViewApp", "CustomViewApp\CustomViewApp.csproj", "{75B043FA-A63A-48B3-8E80-17A7D133BBCB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,6 +19,12 @@ Global
 		{79CE71E9-1CEB-474E-BD87-C3FC6B25877D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{79CE71E9-1CEB-474E-BD87-C3FC6B25877D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{79CE71E9-1CEB-474E-BD87-C3FC6B25877D}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{75B043FA-A63A-48B3-8E80-17A7D133BBCB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75B043FA-A63A-48B3-8E80-17A7D133BBCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75B043FA-A63A-48B3-8E80-17A7D133BBCB}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{75B043FA-A63A-48B3-8E80-17A7D133BBCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75B043FA-A63A-48B3-8E80-17A7D133BBCB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75B043FA-A63A-48B3-8E80-17A7D133BBCB}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
