@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:c="clr-namespace:CameraApp"
+             x:Class="CameraApp.App">
+    <Application.Resources>
+        <x:String x:Key="PickPhotoButtonText">Снять фото</x:String>
+        <x:String x:Key="RepickPhotoButtonText">Переснять фото</x:String>
+        <x:String x:Key="SavePhotoButtonText">Сохранить фото</x:String>
+        <x:String x:Key="ShowGalleryButtonText">Посмотреть галерею</x:String>
+        <c:InverseBoolConverter x:Key="InverseBoolConverter"/>
+    </Application.Resources>
+</Application>
